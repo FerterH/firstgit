@@ -1,0 +1,19 @@
+import cv2
+pic1 = input('Введите название картинки ')
+
+imgbmw = cv2.imread('image/bmw.jpg')
+imgford = cv2.imread('image/ford.jpg')
+pic = {'форд':1, 'лада':2, 'шевроле':3, 'тесла':4, 'порш':5, 'ламборгини':6, 'рено':7, 'хёндай':8}
+if pic[pic1] == 1:
+    imgford = cv2.imread('image/ford.jpg')
+    cv2.imshow('ford', imgford)
+    cv2.waitKey(0)
+elif pic[pic1] == 2:
+    imglada = cv2.imread('image/lada.jpeg')
+    cv2.imshow('lada', imgbmw)
+    cv2.waitKey(0)
+
+elif pic[pic1] == 2:
+    imglada = cv2.imread('image/lada.jpeg')
+    cv2.imshow('lada', imglada)
+    cv2.waitKey(0)
