@@ -1,0 +1,17 @@
+import time
+timer = 1007
+
+while True:
+    file = open('timer.txt', 'a')
+    file.write(str(timer))
+    timer = timer - 7
+    timer1 = timer - 7
+    print(timer, '- 7 =', timer1)
+
+
+    time.sleep(0.1)
+
+    # print(str(timer1))
+    #print('РАЗ')
+    #print('\n')
+    file.close()
