@@ -1,0 +1,36 @@
+# file = open('test.txt', 'r')
+# print(file.read())
+# text = file.read()
+#file.close()
+file = open('test.txt', 'r')
+b = file.read()
+summa = 0
+#print(b[10])     #вывод опр символа
+# dlin = len(b)
+# print(len(b))
+j = 0
+val = ['']
+for i in range(len(b)):
+    if b[i] != ' ':
+        val[j] += b[i]
+    else:
+        j += 1
+        val.append('')
+for i in range(len(val)):
+    val[i] = int(val[i])
+for f in range(len(val)):
+    summa += val[f]
+print(val)
+print(summa)
+file.close()
+
+
+
+
+                                # print(b[i], end='')
+                                # print('\n', end='')
+
+
+
+            #с = 0
+            #с += 1 #счётчик
