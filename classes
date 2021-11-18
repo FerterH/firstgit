@@ -1,5 +1,5 @@
 class Person:
-    def __init__(self, name, age, city):
+    def __init__(self, name='никак', age='0 лет', city='нигде'):
         self.name = name
         self.age = age
         self.city = city
@@ -11,9 +11,26 @@ class Person:
         print('Я из города', self.city)
 
 class Maths:
-    def __init__(self, a, b):
+    def __init__(self, a=0, b=0):
         self.a = a
         self.b = b
     def summa(self):
         otvet = self.a + self.b
         print(otvet)
+class Maths2(Maths):
+    sqrt = 0
+    koren1 = 0
+    koren2 = 0
+    a2 = 0
+    def __init__(self, a=0, b=0, c=0):
+        Maths.__init__(self, a, b)
+        self.c = c
+    def kvyr(self,):
+        self.disk = self.b * self.b - 4 * self.c * self.a
+        self.sqrt = self.disk ** (0.5)
+        self.a2 = self.a + self.a
+        self.koren1 = -self.b + self.sqrt / self.a2
+        self.koren2 = -self.b - self.sqrt / self.a2
+        print('Дискриминант', self.disk)
+        print('Первый корень: ',self.koren1)
+        print('Второй корень: ', self.koren2)
