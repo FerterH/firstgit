@@ -1,0 +1,9 @@
+import cv2
+vid = cv2.VideoCapture('Photos/vid2.mp4')
+while True:
+    success, img = vid.read()
+    cv2.imshow('School', img)
+    if cv2.waitKey(2) & 0xFF == ord('q'):
+        break
+
+
