@@ -1,0 +1,39 @@
+import cv2.cv2
+import numpy as np
+def rotate (yourimg, angle):
+    height, width = img.shape[:2]
+    point = (width//2,height//2)
+    mat = cv2.cv2.getRotationMatrix2D(point, angle, 1)
+    return cv2.cv2.warpAffine(img, mat, (width, height))
+
+
+
+
+
+
+cap = cv2.cv2.VideoCapture('Photos/vid3.mp4')
+cap.set(3, 100)
+cap.set(4, 100)
+y = 1
+x = 1
+gradus = 0
+while True:
+
+    success, img = cap.read()
+    #img = cv2.cv2.flip(img,-1)        #перевёртыш
+    img = cv2.cv2.GaussianBlur(img, (5, 5), 0)  # Размытие
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    #img = cv2.Canny(img, 105, 105)
+
+    img = rotate(img,gradus)
+
+    kernel = np.ones((5, 5), np.uint8)  # uint8 - это формат важная штука менять нельзя
+    img = cv2.dilate(img, kernel, iterations=1)
+                #cv2.cv2.putText(img, 'LOOOOOOOOOOOOOOOOOOOOOL', (y, 50), cv2.cv2.FONT_ITALIC, 1, (255, 255, 0), 3)
+                #cv2.cv2.rectangle(img, (x, 100), (x + 400, img.shape[1] // 2), (240, 7, 157), thickness=3)
+    y = y + 7
+    x = x + 5
+    gradus +=30
+    cv2.cv2.imshow('Result',img)
+    if cv2.cv2.waitKey(10) & 0xFF == ord('q'):
+        break
